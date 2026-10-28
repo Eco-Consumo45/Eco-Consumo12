@@ -1,0 +1,131 @@
+```css
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f8f7ee;
+}
+
+.pantalla {
+    min-height: 100vh;
+    width: 100%;
+    background-color: #f8f7ee;
+}
+
+.encabezado {
+    padding: 22px 25px;
+}
+
+.logo {
+    width: 25px;
+    height: 25px;
+    background-color: #174b35;
+    color: white;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.nombre-logo {
+    color: #174b35;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.contenido {
+    width: 100%;
+    margin: auto;
+    padding: 15px 20px 25px;
+}
+
+.lema {
+    color: #267b43;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.titulo {
+    color: #174b35;
+    font-size: 32px;
+    line-height: 1.1;
+    font-weight: 900;
+}
+
+.avatar {
+    width: 120px;
+    height: 120px;
+    background-color: #d9f3df;
+    color: #168044;
+    font-size: 76px;
+    margin-top: 4px;
+}
+
+.boton-principal,
+.boton-secundario {
+    width: 210px;
+    height: 38px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.boton-principal {
+    color: white;
+    background-color: #168044;
+    border: 1px solid #168044;
+}
+
+.boton-principal:hover {
+    background-color: #116936;
+    color: white;
+}
+
+.boton-secundario {
+    color: #168044;
+    background-color: white;
+    border: 1px solid #168044;
+}
+
+.boton-secundario:hover {
+    color: white;
+    background-color: #168044;
+}
+
+.separador {
+    width: 210px;
+    height: 20px;
+    gap: 10px;
+}
+
+.separador hr {
+    flex: 1;
+    border: 0;
+    border-top: 1px solid #999;
+    opacity: 0.7;
+}
+
+.separador span {
+    color: #174b35;
+    font-size: 11px;
+}
+
+.pie {
+    padding: 25px 10px;
+    color: #168044;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+@media (max-width: 400px) {
+    .titulo {
+        font-size: 28px;
+    }
+
+    .avatar {
+        width: 105px;
+        height: 105px;
+        font-size: 68px;
+    }
+}
+```
