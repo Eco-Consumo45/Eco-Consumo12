@@ -1,131 +1,58 @@
-```css
+:root {
+    --verde-eco: #1e5631;
+    --verde-suave: #e8f5e9;
+}
+
 body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background-color: #f8f7ee;
+    background-color: #fbfbfb;
+    color: #212529;
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
 }
 
-.pantalla {
-    min-height: 100vh;
+.app-container {
+    max-width: 440px;
     width: 100%;
-    background-color: #f8f7ee;
 }
 
-.encabezado {
-    padding: 22px 25px;
+.btn-success {
+    background-color: var(--verde-eco);
+    border-color: var(--verde-eco);
 }
 
-.logo {
-    width: 25px;
-    height: 25px;
-    background-color: #174b35;
+.btn-success:hover {
+    background-color: #143d22;
+    border-color: #143d22;
+}
+
+.btn-outline-success {
+    color: var(--verde-eco);
+    border-color: var(--verde-eco);
+}
+
+.btn-outline-success:hover {
+    background-color: var(--verde-eco);
     color: white;
-    border-radius: 5px;
-    font-size: 16px;
 }
 
-.nombre-logo {
-    color: #174b35;
-    font-size: 13px;
-    font-weight: bold;
-}
-
-.contenido {
-    width: 100%;
-    margin: auto;
-    padding: 15px 20px 25px;
+.text-verde {
+    color: var(--verde-eco);
 }
 
 .lema {
-    color: #267b43;
-    font-size: 12px;
-    font-weight: bold;
+    font-size: 0.95rem;
 }
 
-.titulo {
-    color: #174b35;
-    font-size: 32px;
-    line-height: 1.1;
-    font-weight: 900;
-}
-
-.avatar {
+.avatar-box {
     width: 120px;
     height: 120px;
-    background-color: #d9f3df;
-    color: #168044;
-    font-size: 76px;
-    margin-top: 4px;
+    background-color: var(--verde-suave);
+    border: 2px solid var(--verde-eco);
 }
 
-.boton-principal,
-.boton-secundario {
-    width: 210px;
-    height: 38px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 4px;
-    font-size: 12px;
-    font-weight: bold;
+.avatar-box i {
+    font-size: 4rem;
 }
 
-.boton-principal {
-    color: white;
-    background-color: #168044;
-    border: 1px solid #168044;
+.pie p {
+    font-size: 0.9rem;
 }
-
-.boton-principal:hover {
-    background-color: #116936;
-    color: white;
-}
-
-.boton-secundario {
-    color: #168044;
-    background-color: white;
-    border: 1px solid #168044;
-}
-
-.boton-secundario:hover {
-    color: white;
-    background-color: #168044;
-}
-
-.separador {
-    width: 210px;
-    height: 20px;
-    gap: 10px;
-}
-
-.separador hr {
-    flex: 1;
-    border: 0;
-    border-top: 1px solid #999;
-    opacity: 0.7;
-}
-
-.separador span {
-    color: #174b35;
-    font-size: 11px;
-}
-
-.pie {
-    padding: 25px 10px;
-    color: #168044;
-    font-size: 12px;
-    font-weight: bold;
-}
-
-@media (max-width: 400px) {
-    .titulo {
-        font-size: 28px;
-    }
-
-    .avatar {
-        width: 105px;
-        height: 105px;
-        font-size: 68px;
-    }
-}
-```
