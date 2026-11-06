@@ -6,78 +6,73 @@ box-sizing: border-box;
 
 body {
 font-family: Arial, sans-serif;
-background-color: #f4f6f3;
+background: #f4f6f3;
 color: #222;
-padding: 20px;
+padding: 25px;
 }
 
 .contenedor {
 width: 100%;
-max-width: 430px;
+max-width: 850px;
 margin: 20px auto;
-min-height: 750px;
-padding: 15px;
+border-radius: 12px;
+padding: 30px;
 }
 
 .encabezado {
 display: flex;
 justify-content: space-between;
 align-items: center;
-margin-bottom: 35px;
-gap: 10px;
+margin-bottom: 30px;
 }
 
 .encabezado h1 {
-font-size: 19px;
-font-weight: bold;
+font-size: 25px;
 }
 
 .volver {
-background-color: #244b38;
+background: #244b38;
 color: white;
 text-decoration: none;
 border-radius: 50%;
-width: 38px;
-height: 38px;
+width: 40px;
+height: 40px;
 display: flex;
 justify-content: center;
 align-items: center;
-font-size: 28px;
+font-size: 25px;
 }
 
 .usuario {
-background-color: #e1f0df;
+background: #e1f0df;
 color: #36774a;
 border-radius: 50%;
-width: 35px;
-height: 35px;
+width: 40px;
+height: 40px;
 display: flex;
-align-items: center;
 justify-content: center;
+align-items: center;
 font-size: 23px;
 }
 
 .formulario {
-display: flex;
-flex-direction: column;
-gap: 17px;
+display: grid;
+grid-template-columns: repeat(2, 1fr);
+gap: 22px;
 }
 
 .imagen-producto {
+grid-column: 1 / -1;
 display: flex;
 flex-direction: column;
 align-items: center;
 gap: 12px;
 }
 
-.imagen-producto > label:first-child {
-font-size: 16px;
-}
-
 .subir-imagen {
-width: 85%;
-height: 125px;
-background-color: #dedede;
+width: 70%;
+min-height: 150px;
+background: #dedede;
 border-radius: 12px;
 display: flex;
 flex-direction: column;
@@ -85,23 +80,19 @@ align-items: center;
 justify-content: center;
 color: #777;
 cursor: pointer;
-gap: 5px;
+gap: 8px;
 }
 
 .camara {
-background-color: #aaa;
+background: #aaa;
 color: white;
-width: 40px;
-height: 40px;
+width: 45px;
+height: 45px;
 border-radius: 50%;
 display: flex;
 align-items: center;
 justify-content: center;
 font-size: 25px;
-}
-
-.subir-imagen small {
-font-size: 10px;
 }
 
 #foto {
@@ -111,21 +102,20 @@ display: none;
 .campo {
 display: flex;
 flex-direction: column;
-gap: 7px;
+gap: 8px;
 }
 
 .campo label {
-font-size: 13px;
+font-size: 14px;
+font-weight: bold;
 }
 
 .campo input {
 width: 100%;
-max-width: 290px;
-padding: 9px;
+padding: 12px;
 border: none;
-background-color: #dedede;
-border-radius: 3px;
-font-size: 12px;
+background: #dedede;
+border-radius: 5px;
 }
 
 .campo input:focus {
@@ -138,33 +128,58 @@ color: #777;
 }
 
 .publicar {
-width: 145px;
+grid-column: 1 / -1;
+width: 180px;
 margin: 10px auto;
-padding: 11px;
+padding: 13px;
 border: none;
 border-radius: 9px;
-background-color: #44975c;
+background: #44975c;
 color: white;
 font-size: 16px;
 cursor: pointer;
-transition: background-color 0.3s;
 }
 
 .publicar:hover {
-background-color: #286b3e;
+background: #286b3e;
 }
 
-@media (max-width: 480px) {
+/* Adaptación para celulares */
+
+@media (max-width: 600px) {
+
 body {
 padding: 8px;
 }
 
 .contenedor {
 margin: 5px auto;
-padding: 13px;
+padding: 15px;
 }
 
 .encabezado h1 {
-font-size: 17px;
+font-size: 18px;
+}
+
+.formulario {
+grid-template-columns: 1fr;
+gap: 18px;
+}
+
+.imagen-producto,
+.publicar {
+grid-column: 1;
+}
+
+.subir-imagen {
+width: 100%;
+}
+
+.campo input {
+max-width: 100%;
+}
+
+.publicar {
+width: 100%;
 }
 }
