@@ -1,0 +1,172 @@
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+body {
+font-family: Arial, sans-serif;
+background-color: #f4f6f3;
+color: #222;
+padding: 20px;
+}
+
+.contenedor {
+width: 100%;
+max-width: 430px;
+margin: 20px auto;
+background-color: white;
+border: 3px solid #172b20;
+min-height: 750px;
+padding: 15px;
+}
+
+.encabezado {
+display: flex;
+justify-content: space-between;
+align-items: center;
+margin-bottom: 35px;
+gap: 10px;
+}
+
+.encabezado h1 {
+font-size: 19px;
+font-weight: bold;
+}
+
+.volver {
+background-color: #244b38;
+color: white;
+text-decoration: none;
+border-radius: 50%;
+width: 38px;
+height: 38px;
+display: flex;
+justify-content: center;
+align-items: center;
+font-size: 28px;
+}
+
+.usuario {
+background-color: #e1f0df;
+color: #36774a;
+border-radius: 50%;
+width: 35px;
+height: 35px;
+display: flex;
+align-items: center;
+justify-content: center;
+font-size: 23px;
+}
+
+.formulario {
+display: flex;
+flex-direction: column;
+gap: 17px;
+}
+
+.imagen-producto {
+display: flex;
+flex-direction: column;
+align-items: center;
+gap: 12px;
+}
+
+.imagen-producto > label:first-child {
+font-size: 16px;
+}
+
+.subir-imagen {
+width: 85%;
+height: 125px;
+background-color: #dedede;
+border-radius: 12px;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+color: #777;
+cursor: pointer;
+gap: 5px;
+}
+
+.camara {
+background-color: #aaa;
+color: white;
+width: 40px;
+height: 40px;
+border-radius: 50%;
+display: flex;
+align-items: center;
+justify-content: center;
+font-size: 25px;
+}
+
+.subir-imagen small {
+font-size: 10px;
+}
+
+#foto {
+display: none;
+}
+
+.campo {
+display: flex;
+flex-direction: column;
+gap: 7px;
+}
+
+.campo label {
+font-size: 13px;
+}
+
+.campo input {
+width: 100%;
+max-width: 290px;
+padding: 9px;
+border: none;
+background-color: #dedede;
+border-radius: 3px;
+font-size: 12px;
+}
+
+.campo input:focus {
+outline: 2px solid #4b9560;
+}
+
+.aviso {
+font-size: 11px;
+color: #777;
+}
+
+.publicar {
+width: 145px;
+margin: 10px auto;
+padding: 11px;
+border: none;
+border-radius: 9px;
+background-color: #44975c;
+color: white;
+font-size: 16px;
+cursor: pointer;
+transition: background-color 0.3s;
+}
+
+.publicar:hover {
+background-color: #286b3e;
+}
+
+@media (max-width: 480px) {
+body {
+padding: 8px;
+}
+
+.contenedor {
+margin: 5px auto;
+padding: 13px;
+}
+
+.encabezado h1 {
+font-size: 17px;
+}
+}
