@@ -1,49 +1,99 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Eco Consumo</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EcoConsumo - Inicio</title>
+<link rel="stylesheet" href="style.css">
 </head>
-<body class="d-flex flex-column min-vh-100 justify-content-between m-0">
+<body>
 
-    <header class="w-100 p-3 px-4 d-flex align-items-center">
-        <span class="nombre-logo fw-bold fs-5 d-flex align-items-center gap-2 text-verde">
-            <i class="bi bi-leaf-fill"></i> Eco Consumo
-        </span>
-    </header>
+<main class="contenedor">
 
-    <main class="container text-center my-auto px-4 app-container">
-        <p class="lema mb-2 text-muted fw-light">tu consumo puede cambiar el mundo</p>
+<header class="encabezado">
 
-        <h1 class="titulo mb-5 fw-bold display-5 text-verde">¡Comencemos!</h1>
+<a href="index.html" class="logo">
+<span class="logo-icono">♻</span>
+<span>Eco Consumo</span>
+</a>
 
-        <div class="avatar-box rounded-circle d-flex align-items-center justify-content-center mx-auto mb-5 shadow-sm">
-            <i class="bi bi-person text-verde"></i>
-        </div>
+<a href="#perfil" class="usuario" aria-label="Perfil">
+♙
+</a>
 
-        <a href="iniciar-sesión.html" class="btn btn-success w-100 py-3 mb-3 rounded-pill fs-6 fw-semibold shadow-sm">
-            Iniciar sesión
-        </a>
+</header>
 
-        <div class="separador d-flex align-items-center justify-content-center w-100 my-3 text-muted">
-            <hr class="flex-grow-1">
-            <span class="px-3 small">o</span>
-            <hr class="flex-grow-1">
-        </div>
+<section class="presentacion">
+<p class="subtitulo">ALIMENTOS CERCA TUYO</p>
 
-        <a href="crear-cuenta.html" class="btn btn-outline-success w-100 py-3 mt-2 rounded-pill fs-6 fw-semibold">
-            Crear cuenta
-        </a>
-    </main>
+<h1>Salvá comida,<br>ahorrá más</h1>
 
-    <footer class="pie text-center py-3 text-muted">
-        <p class="mb-0 fw-semibold text-verde">Elegí mejor. Reutilizá. Compartí.</p>
-    </footer>
+<nav class="acciones">
+<a href="#productos" class="boton comprar">
+Comprar
+</a>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+<a href="../pagina1/index.html" class="boton vender">
+Vender
+</a>
+
+<a href="#carrito" class="carrito" aria-label="Ver carrito">
+🛒
+</a>
+</nav>
+</section>
+
+<section class="productos" id="productos">
+
+<article class="producto">
+<div class="imagen coca">🥤</div>
+<h2>Coca cola</h2>
+<p class="precio">$2.200</p>
+<a href="#carrito" class="boton-producto">Comprar</a>
+</article>
+
+<article class="producto">
+<div class="imagen galletitas">🍪</div>
+<h2>Galletitas Oreo</h2>
+<p class="precio">$1.200</p>
+<a href="#carrito" class="boton-producto">Comprar</a>
+</article>
+
+<article class="producto">
+<div class="imagen spaghetti">🍝</div>
+<h2>Spaghetti</h2>
+<p class="precio">$1.000</p>
+<a href="#carrito" class="boton-producto">Comprar</a>
+</article>
+
+<article class="producto">
+<div class="imagen arroz">🍚</div>
+<h2>Arroz</h2>
+<p class="precio">$1.700</p>
+<a href="#carrito" class="boton-producto">Comprar</a>
+</article>
+
+<article class="producto">
+<div class="imagen queso">🧀</div>
+<h2>Queso</h2>
+<p class="precio">$2.500</p>
+<a href="#carrito" class="boton-producto">Comprar</a>
+</article>
+
+<article class="producto">
+<div class="imagen salsa">🥫</div>
+<h2>Salsa de tomate</h2>
+<p class="precio">$1.500</p>
+<a href="#carrito" class="boton-producto">Comprar</a>
+</article>
+
+</section>
+
+<footer id="carrito">
+<p>EcoConsumo - Cuidamos los alimentos y el planeta 🌱</p>
+</footer>
+
+</main>
+
 </body>
 </html>
