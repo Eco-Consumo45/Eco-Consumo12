@@ -1,58 +1,256 @@
-:root {
-    --verde-eco: #1e5631;
-    --verde-suave: #e8f5e9;
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
 }
 
 body {
-    background-color: #fbfbfb;
-    color: #212529;
-    font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+font-family: Arial, sans-serif;
+background: #f4f6f3;
+color: #243d2e;
+padding: 25px;
 }
 
-.app-container {
-    max-width: 440px;
-    width: 100%;
+.contenedor {
+width: 100%;
+max-width: 1200px;
+min-height: 750px;
+margin: 20px auto;
+padding: 30px;
+
+border-radius: 12px;
 }
 
-.btn-success {
-    background-color: var(--verde-eco);
-    border-color: var(--verde-eco);
+.encabezado {
+display: flex;
+justify-content: space-between;
+align-items: center;
+margin-bottom: 45px;
 }
 
-.btn-success:hover {
-    background-color: #143d22;
-    border-color: #143d22;
+.logo {
+display: flex;
+align-items: center;
+gap: 10px;
+color: #244b38;
+font-weight: bold;
+font-size: 22px;
+text-decoration: none;
 }
 
-.btn-outline-success {
-    color: var(--verde-eco);
-    border-color: var(--verde-eco);
+.logo-icono {
+background: #244b38;
+color: white;
+padding: 8px;
+border-radius: 7px;
 }
 
-.btn-outline-success:hover {
-    background-color: var(--verde-eco);
-    color: white;
+.usuario {
+background: #e1f0df;
+color: #36774a;
+border-radius: 50%;
+width: 42px;
+height: 42px;
+display: flex;
+align-items: center;
+justify-content: center;
+font-size: 23px;
+text-decoration: none;
 }
 
-.text-verde {
-    color: var(--verde-eco);
+.presentacion {
+margin-bottom: 35px;
 }
 
-.lema {
-    font-size: 0.95rem;
+.subtitulo {
+color: #4b9560;
+font-size: 13px;
+font-weight: bold;
+margin-bottom: 8px;
 }
 
-.avatar-box {
-    width: 120px;
-    height: 120px;
-    background-color: var(--verde-suave);
-    border: 2px solid var(--verde-eco);
+.presentacion h1 {
+font-family: Georgia, serif;
+font-size: 55px;
+line-height: 1.1;
+margin-bottom: 20px;
+color: #244b38;
 }
 
-.avatar-box i {
-    font-size: 4rem;
+.acciones {
+display: flex;
+align-items: center;
+gap: 15px;
 }
 
-.pie p {
-    font-size: 0.9rem;
+.boton {
+text-decoration: none;
+padding: 13px 25px;
+border-radius: 7px;
+font-weight: bold;
+font-size: 15px;
+}
+
+.comprar {
+background: #438b55;
+color: white;
+}
+
+.vender {
+border: 2px solid #438b55;
+color: #438b55;
+background: white;
+}
+
+.carrito {
+margin-left: auto;
+background: #438b55;
+color: white;
+width: 48px;
+height: 48px;
+border-radius: 50%;
+display: flex;
+align-items: center;
+justify-content: center;
+text-decoration: none;
+font-size: 22px;
+}
+
+.boton:hover,
+.carrito:hover,
+.boton-producto:hover {
+opacity: 0.8;
+}
+
+.productos {
+display: grid;
+grid-template-columns: repeat(3, minmax(0, 1fr));
+gap: 22px;
+padding: 0 5px;
+}
+
+.producto {
+background: #dedede;
+border-radius: 18px;
+padding: 15px;
+text-align: center;
+display: flex;
+flex-direction: column;
+align-items: center;
+gap: 10px;
+}
+
+.imagen {
+width: 100%;
+height: 160px;
+background: white;
+border-radius: 15px;
+display: flex;
+justify-content: center;
+align-items: center;
+font-size: 65px;
+}
+
+.producto h2 {
+font-size: 16px;
+font-weight: normal;
+color: #333;
+}
+
+.precio {
+font-size: 16px;
+color: #333;
+font-weight: bold;
+}
+
+.boton-producto {
+background: #8bc77d;
+color: #24512e;
+text-decoration: none;
+font-size: 13px;
+font-weight: bold;
+padding: 8px 20px;
+border-radius: 10px;
+}
+
+footer {
+text-align: center;
+margin-top: 35px;
+padding: 20px;
+color: #777;
+font-size: 13px;
+}
+
+/* Tablets */
+
+@media (max-width: 800px) {
+
+.productos {
+grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.presentacion h1 {
+font-size: 45px;
+}
+}
+
+/* Celulares */
+
+@media (max-width: 500px) {
+
+body {
+padding: 8px;
+}
+
+.contenedor {
+margin: 5px auto;
+padding: 15px;
+}
+
+.encabezado {
+margin-bottom: 30px;
+}
+
+.logo {
+font-size: 17px;
+}
+
+.presentacion h1 {
+font-size: 35px;
+}
+
+.acciones {
+gap: 8px;
+}
+
+.boton {
+padding: 10px 15px;
+font-size: 13px;
+}
+
+.productos {
+grid-template-columns: repeat(2, minmax(0, 1fr));
+gap: 10px;
+}
+
+.producto {
+padding: 8px;
+}
+
+.imagen {
+height: 95px;
+font-size: 45px;
+}
+
+.producto h2 {
+font-size: 12px;
+}
+
+.precio {
+font-size: 13px;
+}
+
+.boton-producto {
+font-size: 11px;
+}
 }
