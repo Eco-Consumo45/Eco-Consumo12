@@ -1,0 +1,148 @@
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>EcoConsumo - Inicio</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+    <main class="contenedor">
+
+        <header class="encabezado">
+
+            <a href="{{ url_for('inicio') }}" class="logo">
+                <span class="logo-icono">♻</span>
+                <span>Eco Consumo</span>
+            </a>
+
+            <a href="#perfil" class="usuario">♙</a>
+
+        </header>
+
+        <section class="presentacion">
+
+            <p class="subtitulo">ALIMENTOS CERCA TUYO</p>
+
+            <h1>Salvá comida,<br>ahorrá más</h1>
+
+            <nav class="acciones">
+
+                <a href="#productos" class="boton comprar">
+                    Comprar
+                </a>
+
+                <a href="{{ url_for('agregar') }}" class="boton vender">
+                    Vender
+                </a>
+
+                <a href="#productos" class="carrito">
+                    🛒
+                </a>
+
+            </nav>
+
+        </section>
+
+        <section class="productos" id="productos">
+
+            {% for producto in productos %}
+
+                <article class="producto">
+
+                    <div class="imagen">
+
+                        {% if producto.imagen %}
+
+                            <img
+                                src="{{ url_for('static', filename='img/' + producto.imagen) }}"
+                                alt="{{ producto.nombre }}"
+                            >
+
+                        {% else %}
+
+                            <span>📦</span>
+
+                        {% endif %}
+
+                    </div>
+
+                    <h2>{{ producto.nombre }}</h2>
+
+                    <p class="descripcion">
+                        {{ producto.descripcion }}
+                    </p>
+
+                    <p class="precio">
+                        ${{ producto.precio }}
+                    </p>
+
+                    <p class="stock">
+                        Stock: {{ producto.stock }}
+                    </p>
+
+                    {% if producto.stock > 0 %}
+
+                        <form action="{{ url_for('comprar', id=producto.id) }}"
+                              method="POST">
+
+                            <input type="number"
+                                   name="cantidad"
+                                   min="1"
+                                   max="{{ producto.stock }}"
+                                   value="1"
+                                   required>
+
+                            <button type="submit" class="boton-producto">
+                                Comprar
+                            </button>
+
+                        </form>
+
+                    {% else %}
+
+                        <p>Sin stock disponible</p>
+
+                    {% endif %}
+
+                    <a href="{{ url_for('editar', id=producto.id) }}"
+                       class="editar">
+                        Editar
+                    </a>
+
+                    <form action="{{ url_for('eliminar', id=producto.id) }}"
+                          method="POST">
+
+                        <button type="submit" class="eliminar">
+                            Eliminar
+                        </button>
+
+                    </form>
+
+                </article>
+
+            {% else %}
+
+                <p class="sin-productos">
+                    Todavía no hay productos publicados.
+                </p>
+
+            {% endfor %}
+
+        </section>
+
+        <footer>
+            <p>EcoConsumo - Cuidamos los alimentos y el planeta 🌱</p>
+        </footer>
+
+    </main>
+
+</body>
+</html>
