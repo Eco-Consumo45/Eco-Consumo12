@@ -1,0 +1,135 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>EcoConsumo - Agregar producto</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/agregar.css') }}">
+</head>
+
+<body>
+
+    <main class="contenedor">
+
+        <header class="encabezado">
+
+            <a href="{{ url_for('inicio') }}" class="volver">←</a>
+
+            <h1>
+                {% if editar %}
+                    Editar producto
+                {% else %}
+                    Agregar producto
+                {% endif %}
+            </h1>
+
+            <div class="usuario">♙</div>
+
+        </header>
+
+        <form class="formulario"
+              method="POST"
+              enctype="multipart/form-data">
+
+            <section class="imagen-producto">
+
+                <label for="foto">Imagen del producto</label>
+
+                <label for="foto" class="subir-imagen">
+                    <span class="camara">◎</span>
+                    <span>Toca para subir foto</span>
+                    <small>JPG, PNG - Máx. 5MB</small>
+                </label>
+
+                <input type="file"
+                       id="foto"
+                       name="foto"
+                       accept="image/png, image/jpeg">
+
+            </section>
+
+            <div class="campo">
+                <label for="nombre">Nombre de producto</label>
+
+                <input type="text"
+                       id="nombre"
+                       name="nombre"
+                       placeholder="Nombre del producto"
+                       value="{{ producto.nombre if producto else '' }}"
+                       required>
+            </div>
+
+            <div class="campo">
+                <label for="descripcion">Descripción</label>
+
+                <input type="text"
+                       id="descripcion"
+                       name="descripcion"
+                       placeholder="Descripción del producto"
+                       value="{{ producto.descripcion if producto else '' }}"
+                       required>
+            </div>
+
+            <div class="campo">
+                <label for="elaboracion">Fecha de elaboración</label>
+
+                <input type="date"
+                       id="elaboracion"
+                       name="elaboracion"
+                       value="{{ producto.fecha_elaboracion if producto else '' }}"
+                       required>
+            </div>
+
+            <div class="campo">
+                <label for="vencimiento">Fecha de vencimiento</label>
+
+                <input type="datetime-local"
+                       id="vencimiento"
+                       name="vencimiento"
+                       value="{{ producto.fecha_vencimiento.strftime('%Y-%m-%dT%H:%M') if producto else '' }}"
+                       required>
+            </div>
+
+            <div class="campo">
+                <label for="precio">Precio</label>
+
+                <input type="number"
+                       id="precio"
+                       name="precio"
+                       placeholder="$ Precio"
+                       min="0.01"
+                       step="0.01"
+                       value="{{ producto.precio if producto else '' }}"
+                       required>
+            </div>
+
+            <div class="campo">
+                <label for="stock">Cantidad / Stock</label>
+
+                <input type="number"
+                       id="stock"
+                       name="stock"
+                       placeholder="Stock"
+                       min="0"
+                       value="{{ producto.stock if producto else '' }}"
+                       required>
+            </div>
+
+            <button type="submit" class="publicar">
+                {% if editar %}
+                    Guardar cambios
+                {% else %}
+                    Publicar
+                {% endif %}
+            </button>
+
+        </form>
+
+    </main>
+
+</body>
+</html>
