@@ -1,0 +1,58 @@
+:root {
+    --verde-eco: #1e5631;
+    --verde-suave: #e8f5e9;
+}
+
+body {
+    background-color: #fbfbfb;
+    color: #212529;
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+
+.app-container {
+    max-width: 440px;
+    width: 100%;
+}
+
+.btn-success {
+    background-color: var(--verde-eco);
+    border-color: var(--verde-eco);
+}
+
+.btn-success:hover {
+    background-color: #143d22;
+    border-color: #143d22;
+}
+
+.btn-outline-success {
+    color: var(--verde-eco);
+    border-color: var(--verde-eco);
+}
+
+.btn-outline-success:hover {
+    background-color: var(--verde-eco);
+    color: white;
+}
+
+.text-verde {
+    color: var(--verde-eco);
+}
+
+.lema {
+    font-size: 0.95rem;
+}
+
+.avatar-box {
+    width: 120px;
+    height: 120px;
+    background-color: var(--verde-suave);
+    border: 2px solid var(--verde-eco);
+}
+
+.avatar-box i {
+    font-size: 4rem;
+}
+
+.pie p {
+    font-size: 0.9rem;
+}
