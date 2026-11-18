@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Eco Consumo -  Paso 1 de 2</title>
+<link rel="preconnect" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="contenedor">
+<svg class="oculto" aria-hidden="true">
+  <symbol id="persona" viewBox="0 0 100 100">
+    <circle cx="50" cy="36" r="13" fill="none" stroke="currentColor" stroke-width="7"/>
+    <path d="M22 88 C 28 62, 42 55, 50 55 C 58 55, 72 62, 78 88" fill="none" stroke="currentColor" stroke-width="7" stroke-linecap="round"/>
+  </symbol>
+</svg>
+
+<main class="pantalla">
+
+  <header class="marca">
+    <div class="marca-logo" aria-hidden="true">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+        <path d="M4 20 C 3 10, 9 3, 20 4 C 21 14, 15 21, 4 20 Z" fill="#fff"/>
+        <path d="M5 19 C 9 14, 12 11, 16 8 M10 14 L9 9 M12 12 L16 13" stroke="#1b4332" stroke-width="1.6" stroke-linecap="round" fill="none"/>
+      </svg>
+    </div>
+    <span class="marca-nombre">Eco Consumo</span>
+  </header>
+
+  <p class="paso">PASO 1 DE 2</p>
+  <h1>Elegí tu foto de perfil</h1>
+
+  <div class="avatar-wrap">
+    <div class="avatar-grande" id="avatarGrande">
+      <svg viewBox="0 0 100 100" aria-label="Foto de perfil"><use href="#persona"/></svg>
+    </div>
+    <button class="btn-plus" id="btnPlus" type="button" aria-label="Cargar foto desde la galería">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round">
+        <path d="M12 5v14M5 12h14"/>
+      </svg>
+    </button>
+    <input type="file" id="archivo" accept="image/*" hidden>
+  </div>
+
+  <svg class="flecha" width="28" height="48" viewBox="0 0 28 48" fill="none" stroke="#000" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <path d="M14 46V4M3 15 14 4l11 11"/>
+  </svg>
+  <p class="ayuda">Podés cargar una nueva foto desde tu galería</p>
+
+  <div class="separador">o</div>
+  <p class="subtitulo">Seleccioná uno de nuestros diseños</p>
+
+  <div class="franja" id="franja" role="group" aria-label="Diseños de avatar">
+    <button class="opcion av-1" type="button" aria-pressed="false" aria-label="Verde oscuro"><svg><use href="#persona"/></svg></button>
+    <button class="opcion av-2" type="button" aria-pressed="false" aria-label="Azul"><svg><use href="#persona"/></svg></button>
+    <button class="opcion av-3" type="button" aria-pressed="false" aria-label="Violeta"><svg><use href="#persona"/></svg></button>
+    <button class="opcion av-4" type="button" aria-pressed="false" aria-label="Salmón"><svg><use href="#persona"/></svg></button>
+    <button class="opcion av-5" type="button" aria-pressed="false" aria-label="Turquesa"><svg><use href="#persona"/></svg></button>
+    <button class="opcion av-6" type="button" aria-pressed="false" aria-label="Lima"><svg><use href="#persona"/></svg></button>
+    <button class="opcion av-7" type="button" aria-pressed="false" aria-label="Rosa"><svg><use href="#persona"/></svg></button>
+  </div>
+
+  <nav class="acciones">
+    <a class="btn btn-atras" type="button" href="paso2.html">
+      <svg width="40" height="18" viewBox="0 0 40 18" fill="none" stroke="#000" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M38 9H3M10 2 3 9l7 7"/></svg>
+      Atrás
+    </a>
+    <a href="paso2.html" class="btn btn-siguiente">Siguiente</a>
+      <svg width="40" height="18" viewBox="0 0 40 18" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 9h35M30 2l7 7-7 7"/></svg>
+    </a>
+  </nav>
+</div>
+</main>
+
+<script>
+  const grande = document.getElementById('avatarGrande');
+  const opciones = document.querySelectorAll('.opcion');
+  const archivo = document.getElementById('archivo');
+  const iconoGrande = grande.innerHTML;
+
+  document.getElementById('btnPlus').addEventListener('click', () => archivo.click());
+  archivo.addEventListener('change', () => {
+    const f = archivo.files[0];
+    if (!f) return;
+    opciones.forEach(o => o.setAttribute('aria-pressed', 'false'));
+    grande.style.background = '';
+    grande.innerHTML = '';
+    const img = document.createElement('img');
+    img.src = URL.createObjectURL(f);
+    img.alt = 'Tu foto de perfil';
+    grande.appendChild(img);
+  });
+
+
+  opciones.forEach(op => {
+    op.addEventListener('click', () => {
+      const estilo = getComputedStyle(op);
+      opciones.forEach(o => o.setAttribute('aria-pressed', 'false'));
+      op.setAttribute('aria-pressed', 'true');
+      grande.innerHTML = iconoGrande;
+      grande.style.background = estilo.getPropertyValue('--bg');
+      grande.querySelector('svg').style.color = estilo.getPropertyValue('--fg');
+    });
+  });
+</script>
+</div>
+</body>
+</html>
